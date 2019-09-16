@@ -59,26 +59,43 @@ superHero.sliderCharacter = function (data) {
 
 superHero.list = function (data) {
     for (let i = 0; i < data.length; i++) {
-        const markup = `<div class="characterBox"><div class="character" data-publisher="${(data[i].biography.publisher)/* .replace(/\s+/g, '').toLowerCase() */}"><div class="character__image"> <img src="${data[i].images.sm}" alt="${data[i].name}"></div><div class="character__details"><div class="character__name"><h2>${data[i].name}</h2></div><div class="character__desciption"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ad nostrum ut quam? Voluptatibus, minus perspiciatis! Sequi voluptatum, eligendi necessitatibus nostrum sit quod rerum repellat earum, omnis eveniet, totam corporis.</p></div></div></div></div>`;
+
+        var publisher = (data[i].biography.publisher === '' || data[i].biography.publisher === null) ? data[i].biography.publisher : data[i].biography.publisher.replace(/\s+/g, '').toLowerCase();
+
+
+        const markup = `<div class="characterBox"><div class="character" data-publisher="${publisher}"><div class="character__image"> <img src="${data[i].images.sm}" alt="${data[i].name}"></div><div class="character__details"><div class="character__name"><h2>${data[i].name}</h2></div><div class="character__desciption"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ad nostrum ut quam? Voluptatibus, minus perspiciatis! Sequi voluptatum, eligendi necessitatibus nostrum sit quod rerum repellat earum, omnis eveniet, totam corporis.</p></div></div></div></div>`;
         $('body').find('.superhero__bottomSection').append(markup);
     }
 }
 
 
 superHero.bindevent = function () {
-    $('.drpDwn').on('click',function(){
+    $('.drpDwn').on('click', function () {
         $(this).toggleClass('active');
     });
 
-    $('.drpDwn').find('li').on('click',function(){
+    $('.drpDwn').find('li').on('click', function () {
         $(this).parent().parent().siblings().children().first().text($(this).text());
         var optionValue = $(this).attr("data-publisher");
-        if(optionValue){
-                $(".character").not( optionValue).hide();
-                $(optionValue).show();
-            } else{
-                $(".character").hide();
-            }
+        $(".character").parent().show();
+        if (optionValue) {
+            $(".character[data-publisher!='" + optionValue + "']").parent().hide();
+
+            $(optionValue).parent().show();
+        } else {
+            $(".character").parent().hide();
+        }
     });
+
+    $('#search').on('keyup', function () {
+        var value = $(this).val().toLowerCase();
+        $(".superhero__bottomSection *").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+
+
+
+
 };
 
