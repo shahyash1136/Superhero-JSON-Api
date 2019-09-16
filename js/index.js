@@ -76,21 +76,20 @@ superHero.bindevent = function () {
 
     $('.drpDwn').find('li').on('click', function () {
         $(this).parent().parent().siblings().children().first().text($(this).text());
-        var optionValue = $(this).attr("data-publisher");
-        $(".character").parent().show();
-        if (optionValue) {
-            $(".character[data-publisher!='" + optionValue + "']").parent().hide();
-
-            $(optionValue).parent().show();
-        } else {
-            $(".character").parent().hide();
+        var publisher = $(this).attr('data-publisher');
+        $('.character').parent().show();
+        if(publisher){
+            $(".character[data-publisher!='" + publisher + "']").parent().hide();
+            $(publisher).parent().show();
+        }else{
+            $('.character').parent().hide();
         }
     });
 
-    $('#search').on('keyup', function () {
-        var value = $(this).val().toLowerCase();
-        $(".superhero__bottomSection *").filter(function () {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    $('#search').on('keyup',function(){
+        var text = $(this).val().toLowerCase();
+        $('.characterBox').filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(text) > -1);
         });
     });
 
