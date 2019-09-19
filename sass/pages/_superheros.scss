@@ -1,0 +1,67 @@
+@import "../_mixin.scss";
+@import "../_variables.scss";
+
+.parallaxBox {
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.2);
+    top: 0;
+    left: 0;
+  }
+  span {
+    font-size: 50px;
+    font-family: $bold_font-family;
+    font-weight: $bold_font-weight;
+    text-transform: uppercase;
+    color: $white;
+  }
+}
+
+.superhero {
+  &__topSection {
+    @extend %flexbox;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .left {
+      flex: 0 0 20%;
+      width: 20%;
+      .drpDwn {
+        &__value {
+          border-radius: 10px;
+          border-color: rgba($black, 0.2);
+        }
+        &__list{
+          padding-top: 39px;
+          li{
+            color: $black;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+  &__bottomSection {
+    @extend %flexbox;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .character {
+      position: relative;
+      margin-top: 20px;
+      &Box {
+        flex: 0 0 20%;
+        width: 20%;
+        padding: 0px 10px;
+      }
+    }
+  }
+}
