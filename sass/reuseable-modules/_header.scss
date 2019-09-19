@@ -1,0 +1,66 @@
+@import '../_mixin.scss';
+@import '../_variables.scss';
+
+.header{
+    @extend %flexbox;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    min-height: 70px;
+    background-color: $white;
+    &__left{
+        flex: 0 0 180px;
+        width: 180px;
+        & img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__right{
+        flex: 1;
+         @extend %flexbox;
+        justify-content: flex-end;
+        ul{
+             @extend %flexbox;
+            li{
+                position: relative;
+                a{
+                    font-size: 14px;
+                    font-family: $regular_font-family;
+                    font-weight: $regular_font-weight;
+                    color: $black;
+                    text-transform: uppercase;
+                    
+                }
+                &:not(:last-child){
+                    margin-right: 10px;
+                    padding-right: 10px;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        height: calc(100% - 30%);
+                        background-color: rgba($black, .4);
+                        width: 1px;
+                        top: 50%;
+                        @include transform(translateY(-50%));
+                        right: 0;
+                    }
+                }
+            }
+        }
+        .icon{
+            display: none;
+            @media screen and (max-width : $media-mobile-max) {
+                display: block;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+

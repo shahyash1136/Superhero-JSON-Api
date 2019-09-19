@@ -42,14 +42,16 @@ superHero.slider = function () {
 }
 
 superHero.sliderCharacter = function (data) {
-    for (let i = 0; i < data.length; i++) {
-        const markup = `<div class="swiper-slide character"><div class="character__image"> <img src="${data[i].images.md}" alt="${data[i].name}"></div><div class="character__details"><div class="character__name"><h2>${data[i].name}</h2></div><div class="character__desciption"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ad nostrum ut quam? Voluptatibus, minus perspiciatis! Sequi voluptatum, eligendi necessitatibus nostrum sit quod rerum repellat earum, omnis eveniet, totam corporis.</p></div></div></div>`;
+    for (let i = 0; i < 20; i++) {
+        const markup = `<div class="swiper-slide character"><div class="character__image"> <img src="${data[i].images.sm}" alt="${data[i].name}"></div><div class="character__details"><h2 class="character__name">${data[i].name}</h2><h3 class="character__publisher">${data[i].biography.publisher}</h3></div><span class="icon heart"></span></div>`;
         $('body').find('.characters-swiper-container .swiper-wrapper').append(markup);
     }
     var swiper = new Swiper('.characters-swiper-container', {
         centeredSlides: true,
         slidesPerView: 'auto',
         loop: true,
+        slidesPerView: 4,     
+        spaceBetween: 30,  
         autoplay: {
             delay: 4000,
             disableOnInteraction: true,
@@ -63,7 +65,7 @@ superHero.list = function (data) {
         var publisher = (data[i].biography.publisher === '' || data[i].biography.publisher === null) ? data[i].biography.publisher : data[i].biography.publisher.replace(/\s+/g, '').toLowerCase();
 
 
-        const markup = `<div class="characterBox"><div class="character" data-publisher="${publisher}"><div class="character__image"> <img src="${data[i].images.sm}" alt="${data[i].name}"></div><div class="character__details"><div class="character__name"><h2>${data[i].name}</h2></div><div class="character__desciption"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ad nostrum ut quam? Voluptatibus, minus perspiciatis! Sequi voluptatum, eligendi necessitatibus nostrum sit quod rerum repellat earum, omnis eveniet, totam corporis.</p></div></div></div></div>`;
+        const markup = `<div class="characterBox"><div class="character" data-publisher="${publisher}"><div class="character__image"> <img src="${data[i].images.sm}" alt="${data[i].name}"></div><div class="character__details"><h2 class="character__name">${data[i].name}</h2><h3 class="character__publisher">${data[i].biography.publisher}</h3></div> <span class="icon heart"></span></div></div>`;
         $('body').find('.superhero__bottomSection').append(markup);
     }
 }
