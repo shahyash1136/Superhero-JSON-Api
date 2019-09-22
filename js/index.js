@@ -95,6 +95,9 @@ superHero.bindevent = function () {
         });
     });
 
+    $('.menu').find('.menu__bar').on('click',function(){
+        $(this).parent().toggleClass('active');
+    })
 
 
 

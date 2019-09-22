@@ -5,57 +5,40 @@
   &__large {
     padding: 80px 0px;
   }
+
   &__medium {
     padding: 50px 0px;
   }
+
   &__small {
     padding: 30px 0px;
   }
 }
 
 .slider {
-  height: 550px;
   .swiper-container {
     height: 100%;
   }
-  .ratio {
+
+  .slider-img {
     position: relative;
     width: 100%;
-    padding-top: 56.25%;
-  }
-  .slider-img {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    @include background-size(contain);
-  }
-  &1 {
-    background-image: url(../images/slider1.jpg);
-  }
-  &2 {
-    background-image: url(../images/slider2.jpg);
-  }
-  &3 {
-    background-image: url(../images/slider3.jpg);
-  }
-  &4 {
-    background-image: url(../images/slider4.jpg);
-  }
-  &5 {
-    background-image: url(../images/slider5.jpg);
-  }
-  &6 {
-    background-image: url(../images/slider6.jpg);
+    padding-top: 100vh;
+    img{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
   }
 }
 
 .about {
   text-align: center;
   position: relative;
+
   &::after {
     content: " ";
     position: absolute;
@@ -70,29 +53,32 @@
     background-position: center center;
     @include background-size(cover);
   }
-  .para{
-      max-width: 640px;
-      width: 100%;
-      margin: auto;
-      font-family: $regular-font-family;
-      font-weight: $regular-font-weight;
-      font-size: 14px;
-      line-height: 1.4;
+
+  .para {
+    max-width: 640px;
+    width: 100%;
+    margin: auto;
+    font-family: $regular-font-family;
+    font-weight: $regular-font-weight;
+    font-size: 14px;
+    line-height: 1.4;
   }
 }
 
 .characters {
   background-color: $white;
+
   .main__container {
     position: relative;
     overflow: hidden;
   }
+
   .swiper-container {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
   }
- 
+
   /* .swiper-slide {
    
     @include transform(scale(.8));
@@ -109,10 +95,12 @@
   font-family: $bold-font-family;
   font-weight: $bold-font-weight;
   text-transform: uppercase;
+
   h1 {
     position: relative;
     padding-bottom: 10px;
     margin-bottom: 30px;
+
     &::before {
       content: "";
       position: absolute;
@@ -123,6 +111,7 @@
       bottom: 6px;
       background-color: $red;
     }
+
     &::after {
       content: "";
       position: absolute;
