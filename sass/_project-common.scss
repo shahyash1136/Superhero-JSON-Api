@@ -6,7 +6,7 @@
 
 body {
   background: $white;
-
+  overflow-x: hidden;
   &.ar {
     direction: rtl;
   }
@@ -328,8 +328,8 @@ body {
 
     span {
       font-size: 14px;
-      font-family: $semi-bold_font-family;
-      font-weight: $semi_bold_font-weight;
+      font-family: $medium_font-family;
+      font-weight: $medium_font-weight;
       line-height: 1;
     }
 
@@ -346,8 +346,8 @@ body {
 
       & span {
         font-size: 14px;
-        font-family: $semi-bold_font-family;
-        font-weight: $semi-bold_font-weight;
+        font-family: $medium_font-family;
+        font-weight: $medium_font-weight;
         line-height: 1;
       }
     }
@@ -836,8 +836,8 @@ body {
       white-space: nowrap;
       overflow: hidden;
       font-size: 14px;
-      font-family: $semi-bold_font-family;
-      font-weight: $semi-bold_font-weight;
+      font-family: $medium_font-family;
+      font-weight: $medium_font-weight;
     }
 
     i {
@@ -1138,8 +1138,8 @@ body {
     height: 100px;
     right: 0;
     z-index: 11;
-    font-family: $semi-bold_font-family;
-    font-weight: $semi-bold_font-weight;
+    font-family: $medium_font-family;
+    font-weight: $medium_font-weight;
     letter-spacing: 0;
     font-size: 16px;
     line-height: 20px;
@@ -1154,7 +1154,7 @@ body {
 
     .body {
       text-align: left;
-      font-weight: $semi-bold_font-weight;
+      font-weight: $medium_font-weight;
       font-size: 16px;
       margin-top: 2px;
     }

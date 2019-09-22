@@ -1,1 +1,55 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap');
+@font-face {
+    font-family: 'BentonSansExtraCompLight';
+    src: url('../fonts/BentonSansExtraCompLight.eot');
+    src: url('../fonts/BentonSansExtraCompLight.eot') format('embedded-opentype'),
+         url('../fonts/BentonSansExtraCompLight.woff2') format('woff2'),
+         url('../fonts/BentonSansExtraCompLight.woff') format('woff'),
+         url('../fonts/BentonSansExtraCompLight.ttf') format('truetype'),
+         url('../fonts/BentonSansExtraCompLight.svg#BentonSansExtraCompLight') format('svg');
+}
+@font-face {
+    font-family: 'BentonSansExtraCompRegular';
+    src: url('../fonts/BentonSansExtraCompRegular.eot');
+    src: url('../fonts/BentonSansExtraCompRegular.eot') format('embedded-opentype'),
+         url('../fonts/BentonSansExtraCompRegular.woff2') format('woff2'),
+         url('../fonts/BentonSansExtraCompRegular.woff') format('woff'),
+         url('../fonts/BentonSansExtraCompRegular.ttf') format('truetype'),
+         url('../fonts/BentonSansExtraCompRegular.svg#BentonSansExtraCompRegular') format('svg');
+}
+@font-face {
+    font-family: 'BentonSansExtraCompMedium';
+    src: url('../fonts/BentonSansExtraCompMedium.eot');
+    src: url('../fonts/BentonSansExtraCompMedium.eot') format('embedded-opentype'),
+         url('../fonts/BentonSansExtraCompMedium.woff2') format('woff2'),
+         url('../fonts/BentonSansExtraCompMedium.woff') format('woff'),
+         url('../fonts/BentonSansExtraCompMedium.ttf') format('truetype'),
+         url('../fonts/BentonSansExtraCompMedium.svg#BentonSansExtraCompMedium') format('svg');
+}
+@font-face {
+    font-family: 'BentonSansExtraCompBook';
+    src: url('../fonts/BentonSansExtraCompBook.eot');
+    src: url('../fonts/BentonSansExtraCompBook.eot') format('embedded-opentype'),
+         url('../fonts/BentonSansExtraCompBook.woff2') format('woff2'),
+         url('../fonts/BentonSansExtraCompBook.woff') format('woff'),
+         url('../fonts/BentonSansExtraCompBook.ttf') format('truetype'),
+         url('../fonts/BentonSansExtraCompBook.svg#BentonSansExtraCompBook') format('svg');
+}
+@font-face {
+    font-family: 'BentonSansExtraCompBold';
+    src: url('../fonts/BentonSansExtraCompBold.eot');
+    src: url('../fonts/BentonSansExtraCompBold.eot') format('embedded-opentype'),
+         url('../fonts/BentonSansExtraCompBold.woff2') format('woff2'),
+         url('../fonts/BentonSansExtraCompBold.woff') format('woff'),
+         url('../fonts/BentonSansExtraCompBold.ttf') format('truetype'),
+         url('../fonts/BentonSansExtraCompBold.svg#BentonSansExtraCompBold') format('svg');
+}
+@font-face {
+    font-family: 'BentonSansExtraCompBlack';
+    src: url('../fonts/BentonSansExtraCompBlack.eot');
+    src: url('../fonts/BentonSansExtraCompBlack.eot') format('embedded-opentype'),
+         url('../fonts/BentonSansExtraCompBlack.woff2') format('woff2'),
+         url('../fonts/BentonSansExtraCompBlack.woff') format('woff'),
+         url('../fonts/BentonSansExtraCompBlack.ttf') format('truetype'),
+         url('../fonts/BentonSansExtraCompBlack.svg#BentonSansExtraCompBlack') format('svg');
+}
+

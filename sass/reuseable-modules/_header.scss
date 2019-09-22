@@ -1,66 +1,151 @@
 @import '../_mixin.scss';
 @import '../_variables.scss';
 
-.header{
+.header {
     @extend %flexbox;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 15px;
-    min-height: 70px;
-    background-color: $white;
-    &__left{
+    min-height: 40px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    padding: 10px 15px;
+
+    &__left {
         flex: 0 0 180px;
         width: 180px;
-        & img{
+        @extend %flexbox;
+
+        & img {
             width: 100%;
             height: auto;
         }
     }
-    &__right{
-        flex: 1;
-         @extend %flexbox;
-        justify-content: flex-end;
-        ul{
-             @extend %flexbox;
-            li{
-                position: relative;
-                a{
-                    font-size: 14px;
-                    font-family: $regular_font-family;
-                    font-weight: $regular_font-weight;
-                    color: $black;
-                    text-transform: uppercase;
-                    
+
+    &__right {
+        .menu {
+
+            &.active {
+                .menu {
+                    &__bar {
+                        span {
+                            position: relative;
+                            width: 100%;
+                            background: $black;
+                            &:not(:last-child) {
+                                margin: 0;
+                            }
+
+                            &:nth-of-type(1) {
+                                @include transform(rotate(-45deg) translate(-1px, 1px));
+                            }
+
+                            &:nth-of-type(2) {
+                                opacity: 0;
+                            }
+
+                            &:nth-of-type(3) {
+                                @include transform(rotate(45deg) translate(0, 0));
+
+                            }
+                        }
+                    }
+
+                    &__list {
+                        @include transform(translateX(0%));
+                    }
+
                 }
-                &:not(:last-child){
-                    margin-right: 10px;
-                    padding-right: 10px;
-                    &::after{
-                        content: '';
-                        position: absolute;
-                        height: calc(100% - 30%);
-                        background-color: rgba($black, .4);
-                        width: 1px;
-                        top: 50%;
-                        @include transform(translateY(-50%));
-                        right: 0;
+            }
+
+            &__bar {
+                width: 25px;
+                height: 25px;
+                @extend %flexbox;
+                justify-content: center;
+                align-items: flex-end;
+                flex-flow: column;
+                cursor: pointer;
+
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                    background: $white;
+                    transition: 0.4s;
+
+                    &:not(:last-child) {
+                        margin-bottom: 5px;
+                    }
+
+                    &:nth-of-type(2) {
+                        width: calc(100% - 25%);
+                    }
+
+                    &:nth-of-type(3) {
+                        width: calc(100% - 50%);
+                    }
+
+                }
+            }
+
+            &__list {
+                position: absolute;
+                width: 30%;
+                height: 100vh;
+                right: 0;
+                top: 0;
+                background: rgba($white,1);
+                z-index: -1;
+                padding: 15px;
+                @include transform(translateX(100%));
+                @include transition(transform, .4s, ease-in-out);
+                &--top {
+                    height: 100%;
+                    width: 100%;
+                    @extend %flexbox;
+                    align-items: center;
+                    justify-content: center;
+                    ul{
+                        width: calc(100% - 30%);
+                        margin: auto;
+                        li{
+                            text-align: center;
+                            @include transition(all,.8s ,ease-in-out);
+                            &:hover{
+                                a{
+                                   
+                                    &::before{
+                                        content: '';
+                                        position: absolute;
+                                        width: calc(100% + 30%);
+                                        height: 2px;
+                                        left: 50%;
+                                        top:  50%;
+                                        @include transform(translate(-50% , -50%));
+                                        background-color: $black;
+                                    }
+                                }
+                            }
+                            &:not(:last-child){
+                                margin-bottom: 30px;
+                            }
+                            a{
+                                color: $black;
+                                text-decoration: none;
+                                text-transform: uppercase;
+                                font-size: 40px;
+                                font-family: $bold-font-family;
+                                font-weight: $bold-font-weight;
+                                position: relative;
+                                
+                            }
+                        }
                     }
                 }
             }
         }
-        .icon{
-            display: none;
-            @media screen and (max-width : $media-mobile-max) {
-                display: block;
-            }
-        }
     }
 }
-
-
-
-
-
-
-
-

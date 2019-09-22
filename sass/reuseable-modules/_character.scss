@@ -32,12 +32,13 @@
   &__details {
     position: absolute;
     bottom: 0px;
-    width: calc(100% - 30px);
+    width: 100%;
     left: 0;
     right: 0;
     margin: auto;
     padding: 15px;
     color: $white;
+    text-shadow: -5px 0 5px rgba($black, 0.8);
   }
 
   .icon {
